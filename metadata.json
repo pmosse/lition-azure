@@ -1,0 +1,9 @@
+{
+  "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+  "type": "QuickStart",
+  "itemDisplayName": "Deploy Lition Maker",
+  "description": "This template allows you to deploy the Lition Maker tool to create and manage Lition side chains networks.",
+  "summary": "This deploys an Ubuntu VM with Docker Engine and the Lition Maker tool",
+  "githubUsername": "pmosse",
+  "dateUpdated": "2019-12-09"
+}
