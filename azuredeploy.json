@@ -27,11 +27,7 @@
       "metadata": {
         "description": "The Ubuntu version for deploying the Docker containers. This will pick a fully patched image of this given Ubuntu version. Allowed values: 14.04.4-LTS, 15.10, 16.04.0-LTS"
       },
-      "allowedValues": [
-        "14.04.4-LTS",
-        "15.10",
-        "16.04.0-LTS"
-      ]
+      "allowedValues": ["14.04.4-LTS", "15.10", "16.04.0-LTS"]
     },
     "location": {
       "type": "string",
@@ -43,10 +39,7 @@
     "authenticationType": {
       "type": "string",
       "defaultValue": "sshPublicKey",
-      "allowedValues": [
-        "sshPublicKey",
-        "password"
-      ],
+      "allowedValues": ["sshPublicKey", "password"],
       "metadata": {
         "description": "Type of authentication to use on the Virtual Machine. SSH key is recommended."
       }
@@ -105,9 +98,7 @@
       "location": "[parameters('location')]",
       "properties": {
         "addressSpace": {
-          "addressPrefixes": [
-            "[variables('addressPrefix')]"
-          ]
+          "addressPrefixes": ["[variables('addressPrefix')]"]
         },
         "subnets": [
           {
@@ -193,9 +184,7 @@
           "name": "initmaker",
           "apiVersion": "2017-03-30",
           "location": "[parameters('location')]",
-          "dependsOn": [
-            "[variables('vmName')]"
-          ],
+          "dependsOn": ["[variables('vmName')]"],
           "properties": {
             "publisher": "Microsoft.Azure.Extensions",
             "type": "CustomScript",
@@ -203,7 +192,7 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "fileUris": [
-                "[concat(parameters('_artifactsLocation'), '/scripts/clone_and_start_maker.sh')]"
+                "https://raw.githubusercontent.com/pmosse/lition-azure/master/scripts/clone_and_start_maker.sh"
               ],
               "commandToExecute": "[concat('sh clone_and_start_maker.sh ')]"
             }
